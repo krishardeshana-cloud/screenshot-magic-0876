@@ -269,6 +269,38 @@ const DB = [
   { name: "Rakesh Trading Tips", reg: "—", type: "Not found", valid: "—", ok: false },
 ];
 
+const SEARCH_NAMES = [
+  "Zerodha", "Groww", "Angel One", "Upstox", "ICICI Direct", "HDFC Securities",
+  "Kotak Securities", "Motilal Oswal", "5paisa", "Sharekhan", "Dhan", "Axis Direct",
+];
+
+function NamesCarousel() {
+  return (
+    <div className="mt-12 border-y border-border bg-secondary py-4 md:mt-16" aria-label="Names people search for">
+      <div className="mx-auto mb-4 flex max-w-7xl items-center gap-3 px-5 label-mono text-muted-foreground md:px-8">
+        <span className="h-2 w-2 bg-accent" aria-hidden="true" />
+        <span>Names people search for</span>
+        <span className="ml-auto hidden sm:inline">Always verify independently ↗</span>
+      </div>
+      <div className="names-window overflow-hidden">
+        <div className="names-track flex w-max" aria-hidden="true">
+          {[0, 1].map((copy) => (
+            <div key={copy} className="flex shrink-0 items-center gap-4 pr-4 md:gap-6 md:pr-6">
+              {SEARCH_NAMES.map((name, i) => (
+                <span key={name} className="flex shrink-0 items-center gap-3 border border-border bg-background px-4 py-3 text-lg leading-none transition-colors hover:border-accent md:px-5 md:py-4 md:text-2xl">
+                  <span className="font-mono text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>
+                  {name}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      <p className="mx-auto mt-3 max-w-7xl px-5 text-xs text-muted-foreground md:px-8">A name alone is not proof of registration or safety.</p>
+    </div>
+  );
+}
+
 function Sebi() {
   const [q, setQ] = useState("");
   const [sel, setSel] = useState(0);
@@ -278,6 +310,7 @@ function Sebi() {
   return (
     <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
       <SecHead id="sebi" n="03" label="SEBI verification" title={<>Is your adviser <span className="font-mono text-accent">[registered]</span>?</>} />
+      <NamesCarousel />
       <R d={100} className="mt-12">
         <div className="flex items-center gap-3 border-b-2 border-foreground pb-3 transition-colors focus-within:border-accent">
           <span className="label-mono text-muted-foreground">&gt;</span>
