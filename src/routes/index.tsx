@@ -273,7 +273,7 @@ function Sebi() {
   const [sel, setSel] = useState(0);
   const results = q ? DB.filter((d) => (d.name + d.reg).toLowerCase().includes(q.toLowerCase())) : DB;
   const list = results.length ? results : [{ name: q, reg: "—", type: "Not found", valid: "—", ok: false }];
-  const cur = list[Math.min(sel, list.length - 1)];
+  const cur = list[Math.min(sel, list.length - 1)]!;
   return (
     <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
       <SecHead id="sebi" n="03" label="SEBI verification" title={<>Is your adviser <span className="font-mono text-accent">[registered]</span>?</>} />
