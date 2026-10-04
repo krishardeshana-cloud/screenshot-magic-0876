@@ -42,7 +42,7 @@ const Logo = () => (
 const SecHead = ({ n, label, title, id }: { n: string; label: string; title: ReactNode; id?: string }) => (
   <R>
     <div id={id} className="flex items-center gap-3 label-mono text-muted-foreground scroll-mt-24">
-      <span>[N.{n}/07]</span><span className="h-px w-8 bg-border" /><span>&gt; {label}</span><span className="h-px flex-1 bg-border" />
+      <span>[N.{n}/05]</span><span className="h-px w-8 bg-border" /><span>&gt; {label}</span><span className="h-px flex-1 bg-border" />
     </div>
     <h2 className="mt-6 text-4xl font-normal leading-[1.05] tracking-tight md:text-6xl">{title}</h2>
   </R>
@@ -219,7 +219,7 @@ function Result({ r }: { r: Res | null }) {
     <section className="bg-ink text-ink-foreground">
       <div className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
         <R>
-          <div id="result" className="flex items-center gap-3 label-mono text-ink-muted scroll-mt-24"><span>[N.02/07]</span><span className="h-px w-8 bg-ink-border" /><span>&gt; Check result {r ? "" : "· sample"}</span><span className="h-px flex-1 bg-ink-border" /></div>
+          <div id="result" className="flex items-center gap-3 label-mono text-ink-muted scroll-mt-24"><span>[N.02/05]</span><span className="h-px w-8 bg-ink-border" /><span>&gt; Check result {r ? "" : "· sample"}</span><span className="h-px flex-1 bg-ink-border" /></div>
         </R>
         <div key={res.score} className="mt-12 grid gap-12 md:grid-cols-12">
           <R className="md:col-span-5">
