@@ -49,6 +49,7 @@ const SecHead = ({ n, label, title, id }: { n: string; label: string; title: Rea
 );
 
 const btnDark = "group inline-flex items-center justify-between gap-6 bg-primary px-5 py-3.5 label-mono text-primary-foreground transition-all hover:bg-accent hover:text-accent-foreground active:scale-[.98] disabled:opacity-40";
+const btnLight = btnDark.replace("bg-primary", "bg-ink-foreground").replace("text-primary-foreground", "text-ink");
 const btnLine = "group inline-flex items-center gap-2 border-b border-current pb-1 label-mono transition-colors hover:text-accent";
 
 const LANGS = ["EN", "हिं", "ગુ", "मरा", "தமி"];
@@ -120,7 +121,7 @@ function Hero() {
             <p className="max-w-md text-lg leading-snug text-ink-muted md:text-xl">
               Got a tip that sounds too good? Paste it, upload it, or record it. Ruko checks for scam patterns and SEBI registration before your money moves.
             </p>
-            <a href="#check" className={`${btnDark} mt-8 bg-ink-foreground text-ink`}>■ Check an offer <Arrow /></a>
+            <a href="#check" className={`${btnLight} mt-8`}>■ Check an offer <Arrow /></a>
           </R>
           <R d={200} className="hidden md:flex md:justify-end md:pt-10">
             <p className="label-mono leading-relaxed text-ink-muted">✦ Pause.<br />&nbsp;&nbsp;&nbsp;&nbsp;Verify.<br />&nbsp;&nbsp;Then invest. +</p>
@@ -235,7 +236,7 @@ function Result({ r }: { r: Res | null }) {
               ))}
             </div>
             <p className="mt-10 text-lg leading-snug text-ink-muted">{explain}</p>
-            <button onClick={read} className={`${btnDark} mt-8 bg-ink-foreground text-ink`}>{speaking ? "■ Stop reading" : "▷ Read aloud"} <Arrow /></button>
+            <button onClick={read} className={`${btnLight} mt-8`}>{speaking ? "■ Stop reading" : "▷ Read aloud"} <Arrow /></button>
           </R>
           <div className="md:col-span-7">
             <p className="label-mono text-ink-muted">Detected red flags · {flags.length}</p>
